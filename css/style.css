@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.bg-img {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  min-height: 100vh;
+  background-color: antiquewhite;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  max-width: 1280px;
+  min-height: 100vh;
+  width: 100%;
+  margin: auto;
+  background: #7ecdc7 url(../img/sun.png) no-repeat left top;
+  background-size: 55vh;
+}
+
+.wrapper {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  overflow-x: hidden;
+}
+
+.slider {
+  height: inherit;
+  display: flex;
+  animation: linear;
+  animation-name: slider;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation: slider 5s linear infinite;
+}
+
+.wrapper:hover .slider {
+  animation-play-state: paused;
+}
+
+.wrapper:hover .slider__img-lion {
+  background: url(../img/lion.png) no-repeat;
+  background-size: contain;
+}
+
+.slider__img-lion {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 350px;
+  height: 150px;
+  background: url(../img/lion.gif) no-repeat;
+  background-size: contain;
+}
+
+@keyframes slider {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
